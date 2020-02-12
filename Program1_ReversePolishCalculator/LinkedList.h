@@ -1,3 +1,7 @@
+#ifndef LINKEDLIST_H
+#define LINKEDLIST_H
+
+
 struct Node
 {
 	double value;
@@ -18,3 +22,5 @@ public:
 	int removeFromTail();
 };
 
+
+#endif // !LINKEDLIST_H

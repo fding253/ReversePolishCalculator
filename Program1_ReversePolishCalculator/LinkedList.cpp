@@ -53,7 +53,12 @@ int LinkedList::removeFromTail()
 	// Move tail tracker
 	tail = tail->prev;
 
-	// Delete old tail
+	// If LL is now empty, set head to null
+	if (tail == nullptr) {
+		head = nullptr;
+	}
+
+	// Free removed node
 	delete old_tail;
 
 	return 0;
