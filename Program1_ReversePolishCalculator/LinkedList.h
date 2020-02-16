@@ -19,7 +19,7 @@ public:
 	~LinkedList();
 
 	int addToTail(double);
-	int removeFromTail();
+	double removeFromTail();
 };
 
 

@@ -8,7 +8,8 @@ LinkedList::LinkedList()
 
 LinkedList::~LinkedList()
 {
-	while (head != nullptr) {
+	while (head != nullptr) 
+	{
 		head = head->next;
 		delete head->prev;
 	}
@@ -23,7 +24,8 @@ int LinkedList::addToTail(double val)
 	N->next = nullptr;
 	N->prev = tail;
 
-	if (head == nullptr) {
+	if (head == nullptr) 
+	{
 		// Empty linked list -- set 
 		head = N;
 		tail = N;
@@ -41,25 +43,28 @@ int LinkedList::addToTail(double val)
 }
 
 // Remove node from end of linked list
-int LinkedList::removeFromTail()
+double LinkedList::removeFromTail()
 {
-	if (head == nullptr) {
+	if (head == nullptr) 
+	{
 		// empty linked list: can't remove
-		return -1;
+		throw "Empty List";
 	}
 
 	Node* old_tail = tail;
+	double removed_value = old_tail->value;
 
 	// Move tail tracker
 	tail = tail->prev;
 
 	// If LL is now empty, set head to null
-	if (tail == nullptr) {
+	if (tail == nullptr) 
+	{
 		head = nullptr;
 	}
 
 	// Free removed node
 	delete old_tail;
 
-	return 0;
+	return removed_value;
 }
