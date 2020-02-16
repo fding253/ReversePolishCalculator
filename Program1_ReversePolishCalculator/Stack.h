@@ -9,6 +9,7 @@ public:
 	Stack();
 	~Stack();
 	LinkedList* myStack;
+	int count;
 
 	int push(double);
 	double pop();
