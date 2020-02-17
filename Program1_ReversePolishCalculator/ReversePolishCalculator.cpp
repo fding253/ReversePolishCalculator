@@ -75,10 +75,9 @@ void ReversePolishCalculator::processWord(std::string word)
 			right = calculatorStack->pop();
 			left = calculatorStack->pop();
 		}
-		catch (char* msg)
+		catch (const char* error_msg)
 		{
-			std::cout << "Not enough operands" << std::endl;
-			throw "Not enough operands";
+			throw "Error: Too many operators";
 		}
 
 
@@ -87,17 +86,15 @@ void ReversePolishCalculator::processWord(std::string word)
 	}
 	else if (word == "=")
 	{
-		// Check whether there are too many operations
+		// Check whether there are too many operands
 		if (calculatorStack->count > 1)
 		{
-			std::cout << "Not enough operations" << std::endl;
-			throw "Not enough operations";
+			throw "Error: Too many operands";
 		}
-		// Check whether there are too many operands
+		// Check whether there are too many operations
 		else if (calculatorStack->count <= 0)
 		{
-			std::cout << "Not enough operands" << std::endl;
-			throw "Not enough operands";
+			throw "Error: Too many operators";
 		}
 		// Print result
 		else
@@ -126,7 +123,6 @@ double ReversePolishCalculator::calculateOperation(double left, double right, st
 	{
 		if (right == 0)
 		{
-			std::cout << "Division by zero" << std::endl;
 			throw "Division by Zero";
 		}
 		else
@@ -151,8 +147,9 @@ void ReversePolishCalculator::evaluateReversePolishExpression(std::string expres
 			{
 				processWord(word);
 			}
-			catch (char *error)
+			catch (const char *error_msg)
 			{
+				std::cout << error_msg << std::endl;
 				return;
 			}
 
@@ -170,8 +167,9 @@ void ReversePolishCalculator::evaluateReversePolishExpression(std::string expres
 	{
 		processWord(word);
 	}
-	catch (char* error)
+	catch (const char* error_msg)
 	{
+		std::cout << error_msg << std::endl;
 		return;
 	}
 }

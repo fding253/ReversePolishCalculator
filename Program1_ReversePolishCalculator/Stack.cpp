@@ -33,7 +33,7 @@ double Stack::pop()
 	{
 		myStack->removeFromTail();
 	}
-	catch (char *msg) 
+	catch (const char *error_msg) 
 	{
 		//std::cerr << msg << std::endl;
 		//std::cout << msg << std::endl;

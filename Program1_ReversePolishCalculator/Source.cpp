@@ -6,6 +6,33 @@
 
 
 int main() {
+	// ======== RUN REVERSE POLISH CALCULATOR ========
+	ReversePolishCalculator* rp = new ReversePolishCalculator();
+
+	/* ======== SAMPLE OUTPUT ========
+	10 15 + =
+	25
+	10 15 - =
+	-5
+	2.5 3.5 + =
+	6
+	10 0 / =
+	Error: Division by zero
+	10 20 * / =
+	Error : Too many operators
+	12 20 30 / =
+	Error : Too many operands
+	-10 -30 - =
+	20
+	100 10 50 25 / * - -2 / =
+	-40
+
+	*/
+}
+
+
+void TestLL()
+{
 	// ============ TESTING LINKED LIST ===================
 	//LinkedList* ll = new LinkedList();
 
@@ -27,8 +54,10 @@ int main() {
 
 	//std::cout << "head " << ll->head->value << std::endl;
 	//std::cout << "tail " << ll->tail->value << std::endl;
+}
 
-
+void TestStack()
+{
 	// ============ TESTING STACK ===================
 	//double x;
 	//Stack* s = new Stack();
@@ -45,8 +74,4 @@ int main() {
 	//std::cout << "popped " << x << std::endl;
 	////x = s->pop();
 	////std::cout << "popped " << x << std::endl;
-
-
-	// ======== TESTING REVERSE POLISH CALCULATOR ========
-	ReversePolishCalculator* rp = new ReversePolishCalculator();
 }
