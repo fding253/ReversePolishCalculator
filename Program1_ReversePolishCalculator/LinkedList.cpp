@@ -8,11 +8,16 @@ LinkedList::LinkedList()
 
 LinkedList::~LinkedList()
 {
+	Node* next;
+
 	while (head != nullptr) 
 	{
-		head = head->next;
-		delete head->prev;
+		next = head->next;
+		delete head;
+		head = next;
 	}
+
+	tail = nullptr;
 }
 
 // Add node to end of linked list
